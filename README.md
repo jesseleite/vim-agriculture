@@ -2,6 +2,24 @@
 
 A vim plugin to smart quote your ag searches.
 
+# Rationale
+
+I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to quickly `:Ag` search multiple words without quotes, narrow down multiple results in realtime with [extended search syntax](https://github.com/junegunn/fzf#search-syntax), then populate quickfix for a large refactor 👌
+
+```
+:Ag function index
+```
+
+But I found myself missing the ability to pass options to like I could with `:Ack` 😢
+
+```
+:Ack -Q -i 'function index' vendor
+```
+
+Furthermore, switching between both tools was frustrating because Ack.vim always required quotes for multi word searches, but Fzf.vim treated quotes as a literal part of the search query.
+
+Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass options, and do it all from one command!
+
 # Installation
 
 1. Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
