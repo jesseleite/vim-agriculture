@@ -1,6 +1,6 @@
 # Vim Agriculture 🚜
 
-A vim plugin to smart quote your ag searches.
+A vim plugin to smart quote your [ag](https://github.com/ggreer/the_silver_searcher) searches.
 
 # Rationale
 
@@ -10,7 +10,7 @@ I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to qu
 :Ag function index
 ```
 
-But I found myself missing the ability to pass options to like I could with `:Ack` 😢
+But I found myself missing the ability to pass options to like I could with [Ack.vim](https://github.com/mileszs/ack.vim)'s `:Ack` 😢
 
 ```
 :Ack -Q -i 'function index' vendor
@@ -18,7 +18,7 @@ But I found myself missing the ability to pass options to like I could with `:Ac
 
 Furthermore, switching between both tools was frustrating because Ack.vim always required quotes for multi word searches, but Fzf.vim treated quotes as a literal part of the search query.
 
-Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass options, and do it all from one command!
+Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass options, and do it all from one command! ❤️
 
 # Installation
 
