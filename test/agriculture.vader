@@ -1,0 +1,18 @@
+Execute (Auto quotes without options or path):
+  AssertEqual '"func.* index"', agriculture#smart_quote_input('func.* index')
+  AssertEqual '"func.*\ index"', agriculture#smart_quote_input('func.*\ index')
+
+Execute (Hands off with quotes):
+  AssertEqual '"func.* index"', agriculture#smart_quote_input('"func.* index"')
+  AssertEqual "'func.* index'", agriculture#smart_quote_input("'func.* index'")
+  AssertEqual 'Why you "scruffy looking nerf herder"!', agriculture#smart_quote_input('Why you "scruffy looking nerf herder"!')
+  AssertEqual "Who's scruffy looking?", agriculture#smart_quote_input("Who's scruffy looking?")
+
+Execute (Hands off with options):
+  AssertEqual '-Q function', agriculture#smart_quote_input('-Q function')
+  AssertEqual 'function -Q', agriculture#smart_quote_input('function -Q')
+  AssertEqual '-u function -Q', agriculture#smart_quote_input('-u function -Q')
+
+Execute (Hands off with space escaped query and path):
+  AssertEqual 'func.*\ index vendor/package', agriculture#smart_quote_input('func.*\ index vendor/package')
+
