@@ -42,6 +42,27 @@ Thus, the intention of this plugin is to bring the best of both worlds to your f
 
 3. Save, source, and enjoy!
 
+# How It Works
+
+Your input will be automatically quoted _unless_ the following conditions are met:
+   - Quotes in your query, signifying you might want to handle your own quoting/escaping, ie.
+      ```
+      :Ag -Q "Already quoted this pattern."
+      :Ag Why you "scruffy looking nerf herder"!
+      :Ag Who's scruffy looking?
+      ```
+   - A space followed by a dash in your query, signifying you might be passing an option, ie.
+      ```
+      :Ag -Q function index
+      :Ag Which way to the beach? -> that way!
+      ```
+   - An escaped pattern followed by an unescaped space, signifying you might be passing a path, ie.
+      ```
+      :Ag an\ escaped\ pattern vendor/folder
+      ```
+
+TL;DR: If you use quotes, dashes, or need to pass a path, it's recommended you quote/escape your own pattern and vim-agriculture will stay out of your way 👍
+
 # Who am I?
 
 Just a hack 🔨
