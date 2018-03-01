@@ -28,14 +28,14 @@ Thus, the intention of this plugin is to bring the best of both worlds to your f
     Plug 'jesseleite/vim-agriculture'
     ```
     
-2. Overwrite your favourite search wrapper to use `agriculture#smart_quote_input()` in your `.vimrc`.
+2. Overwrite your favourite search wrapper to use `agriculture#smart_quote_input()` in your `.vimrc`:
 
-   [Fzf.vim's :Ag](https://github.com/junegunn/fzf.vim):
+   [Fzf.vim's :Ag](https://github.com/junegunn/fzf.vim)
    ```
    command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(agriculture#smart_quote_input(<q-args>), <bang>0)
    ```
 
-   [Ack.vim's :Ack](https://github.com/mileszs/ack.vim):
+   [Ack.vim's :Ack](https://github.com/mileszs/ack.vim)
    ```
    command! -bang -nargs=* -complete=file Ack call ack#Ack('grep<bang>', agriculture#smart_quote_input(<q-args>))
    ```
