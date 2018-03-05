@@ -1,6 +1,6 @@
 # Vim Agriculture 🚜
 
-A vim plugin to smart quote your [ag](https://github.com/ggreer/the_silver_searcher) searches.
+A vim plugin to smart quote raw [ag](https://github.com/ggreer/the_silver_searcher) searches.
 
 # Rationale
 
