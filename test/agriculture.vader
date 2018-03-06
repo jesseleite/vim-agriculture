@@ -1,6 +1,6 @@
 Execute (Auto quotes without options or path):
-  AssertEqual '"func.* index"', agriculture#smart_quote_input('func.* index')
-  AssertEqual '"func.*\ index"', agriculture#smart_quote_input('func.*\ index')
+  AssertEqual '-- "func.* index"', agriculture#smart_quote_input('func.* index')
+  AssertEqual '-- "func.*\ index"', agriculture#smart_quote_input('func.*\ index')
 
 Execute (Hands off with quotes):
   AssertEqual '"func.* index"', agriculture#smart_quote_input('"func.* index"')
