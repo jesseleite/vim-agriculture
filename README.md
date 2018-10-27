@@ -1,6 +1,6 @@
 # Vim Agriculture 🚜
 
-A vim plugin to smart quote raw [ag](https://github.com/ggreer/the_silver_searcher) searches.
+A vim plugin to improve the project search experience when using tools like [ag](https://github.com/ggreer/the_silver_searcher).
 
 # Rationale
 
@@ -22,25 +22,23 @@ Thus, the intention of this plugin is to bring the best of both worlds to your f
 
 # Installation
 
-1. Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
+Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
 
-    ```
-    Plug 'jesseleite/vim-agriculture'
-    ```
-    
-2. Overwrite your favourite search wrapper to use `agriculture#smart_quote_input()` in your `.vimrc`:
+```
+Plug 'jesseleite/vim-agriculture'
+```
 
-   [Fzf.vim's :Ag](https://github.com/junegunn/fzf.vim)
-   ```
-   command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(agriculture#smart_quote_input(<q-args>), <bang>0)
-   ```
+# Usage
 
-   [Ack.vim's :Ack](https://github.com/mileszs/ack.vim)
-   ```
-   command! -bang -nargs=* -complete=file Ack call ack#Ack('grep<bang>', agriculture#smart_quote_input(<q-args>))
-   ```
+If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` function.
 
-3. Save, source, and enjoy!
+```
+:AgRaw func.*index
+:AgRaw 'func.*index'
+:AgRaw -Q 'function index()' app/Http/Controllers
+```
+
+If you are using another search wrapper, you'll need to wrap your input with `agriculture#smart_quote_input()`.
 
 # How It Works
 
