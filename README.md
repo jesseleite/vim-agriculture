@@ -1,6 +1,6 @@
 # Vim Agriculture 🚜
 
-A vim plugin to improve the project search experience when using tools like [ag](https://github.com/ggreer/the_silver_searcher).
+A vim plugin to improve the project search experience when using tools like [ag](https://github.com/ggreer/the_silver_searcher) and [rg](https://github.com/BurntSushi/ripgrep).
 
 # Rationale
 
@@ -30,7 +30,7 @@ Plug 'jesseleite/vim-agriculture'
 
 # Usage
 
-If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` function.
+If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` functions.
 
 ```
 :AgRaw func.*index
