@@ -5,3 +5,18 @@ function! agriculture#smart_quote_input(input)
   return hasQuotes || hasOptions || hasEscapedSpacesPlusPath ? a:input : '-- "' . a:input . '"'
 endfunction
 
+" Fzf.vim provides a nice ag_raw() function, but not one for rg_raw() yet...
+
+function! agriculture#fzf_rg_raw(command_suffix, ...)
+  if !executable('rg')
+    return s:warn('rg is not found')
+  endif
+  return call('fzf#vim#grep', extend(['rg --column --line-number --no-heading --color=always --smart-case '.a:command_suffix, 1], a:000))
+endfunction
+
+function! s:warn(message)
+  echohl WarningMsg
+  echom a:message
+  echohl None
+  return 0
+endfunction
