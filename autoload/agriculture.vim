@@ -11,7 +11,7 @@ function! agriculture#fzf_rg_raw(command_suffix, ...)
   if !executable('rg')
     return s:warn('rg is not found')
   endif
-  return call('fzf#vim#grep', extend(['rg --column --line-number --no-heading --color=always --smart-case '.a:command_suffix, 1], a:000))
+  return call('fzf#vim#grep', extend(['rg --column --line-number --no-heading --color=always '.a:command_suffix, 1], a:000))
 endfunction
 
 function! s:warn(message)
