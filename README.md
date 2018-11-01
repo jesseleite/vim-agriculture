@@ -38,6 +38,8 @@ If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can
 :AgRaw -Q 'function index()' app/Http/Controllers
 ```
 
+Likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
+
 If you are using another search wrapper, you'll need to wrap your input with `agriculture#smart_quote_input()`.
 
 # Mappings
@@ -50,7 +52,7 @@ vmap <Leader>/ <Plug>AgRawVisualSelection
 nmap <Leader>* <Plug>AgRawWordUnderCursor
 ```
 
-And likewise for `:RgRaw`, just substitute `AgRaw` for `RgRaw` in the above examples.
+Again likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
 
 # How It Works
 
