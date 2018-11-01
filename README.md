@@ -45,7 +45,6 @@ If you are using another search wrapper, you'll need to wrap your input with `ag
 If you are using one of the provided commands, you can also hook into the provided `<Plug>` mappings in your `.vimrc`:
 
 ```
-" Ag search project
 nmap <Leader>/ <Plug>AgRawSearch
 vmap <Leader>/ <Plug>AgRawVisualSelection
 nmap <Leader>* <Plug>AgRawWordUnderCursor
