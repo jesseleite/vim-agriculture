@@ -7,9 +7,9 @@ nnoremap <Plug>AgRawSearch :AgRaw<Space>
 nnoremap <Plug>RgRawSearch :RgRaw<Space>
 
 " Mappings to search visual selection
-vnoremap <Plug>AgRawVisualSelection "ay:AgRaw<Space>'<C-r>a'
-vnoremap <Plug>RgRawVisualSelection "ay:RgRaw<Space>'<C-r>a'
+vnoremap <Plug>AgRawVisualSelection "ay:AgRaw -Q '<C-r>a'
+vnoremap <Plug>RgRawVisualSelection "ay:RgRaw -F '<C-r>a'
 
 " Mappings to search word under cursor
-nnoremap <Plug>AgRawWordUnderCursor :AgRaw<Space>'<C-R><C-W>'
-nnoremap <Plug>RgRawWordUnderCursor :RgRaw<Space>'<C-R><C-W>'
+nnoremap <Plug>AgRawWordUnderCursor :AgRaw -Q '<C-R><C-W>'
+nnoremap <Plug>RgRawWordUnderCursor :RgRaw -F '<C-R><C-W>'
