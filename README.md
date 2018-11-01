@@ -30,7 +30,7 @@ Plug 'jesseleite/vim-agriculture'
 
 # Usage
 
-If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` functions.
+If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` commands.
 
 ```
 :AgRaw func.*index
@@ -39,6 +39,19 @@ If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can
 ```
 
 If you are using another search wrapper, you'll need to wrap your input with `agriculture#smart_quote_input()`.
+
+# Mappings
+
+If you are using one of the above mentioned commands, you can also hook into the provided `<Plug>` mappings in your `.vimrc`:
+
+```
+" Ag search project
+nmap <Leader>/ <Plug>AgRawSearch
+vmap <Leader>/ <Plug>AgRawVisualSelection
+nmap <Leader>* <Plug>AgRawWordUnderCursor
+```
+
+And likewise for `:RgRaw`, just substitute `AgRaw` for `RgRaw` in the above examples.
 
 # How It Works
 
