@@ -10,5 +10,5 @@ Execute (Escape text in register a):
 Do (Paste escaped text from register a):
   V"ap
 
-Expect:
+Expect (Pasted text was properly escaped):
   \# Who\'s scruffy \\looking\%?
