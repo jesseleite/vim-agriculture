@@ -1,0 +1,14 @@
+Given (A fancy star wars line in buffer):
+  Who's scruffy looking?
+
+Do (Yank text with single quote to register a):
+  v$h"ay
+
+Execute (Escape single quotes in register a):
+  call agriculture#escape_quotes_in_register_a()
+
+Do (Paste escaped text from register a):
+  V"ap
+
+Expect:
+  Who\'s scruffy looking?

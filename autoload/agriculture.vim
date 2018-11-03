@@ -5,7 +5,11 @@ function! agriculture#smart_quote_input(input)
   return hasQuotes || hasOptions || hasEscapedSpacesPlusPath ? a:input : '-- "' . a:input . '"'
 endfunction
 
-" Fzf.vim provides a nice ag_raw() function, but not one for rg_raw() yet...
+function! agriculture#escape_quotes_in_register_a()
+  let query = getreg('a')
+  let escapedQuery = escape(query, "'")
+  call setreg('a', escapedQuery)
+endfunction
 
 function! agriculture#fzf_rg_raw(command_suffix, ...)
   if !executable('rg')
