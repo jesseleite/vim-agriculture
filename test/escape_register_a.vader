@@ -1,14 +1,14 @@
 Given (A fancy star wars line that needs escaping):
-  # Who's scruffy \looking?
+  # Who's scruffy \looking%?
 
 Do (Yank text to register a):
   v$h"ay
 
 Execute (Escape text in register a):
-  call agriculture#escape_quotes_in_register_a()
+  call agriculture#escape_register_a()
 
 Do (Paste escaped text from register a):
   V"ap
 
 Expect:
-  \# Who\'s scruffy \\looking?
+  \# Who\'s scruffy \\looking\%?
