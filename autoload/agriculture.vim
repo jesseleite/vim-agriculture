@@ -7,7 +7,7 @@ endfunction
 
 function! agriculture#escape_quotes_in_register_a()
   let query = getreg('a')
-  let escapedQuery = escape(query, "'")
+  let escapedQuery = escape(query, "'#\\")
   call setreg('a', escapedQuery)
 endfunction
 
