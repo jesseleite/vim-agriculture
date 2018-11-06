@@ -5,9 +5,10 @@ function! agriculture#smart_quote_input(input)
   return hasQuotes || hasOptions || hasEscapedSpacesPlusPath ? a:input : '-- "' . a:input . '"'
 endfunction
 
-function! agriculture#escape_register_a()
+function! agriculture#trim_and_escape_register_a()
   let query = getreg('a')
-  let escapedQuery = escape(query, "'#%\\")
+  let trimmedQuery = trim(query)
+  let escapedQuery = escape(trimmedQuery, "'#%\\")
   call setreg('a', escapedQuery)
 endfunction
 
