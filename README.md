@@ -2,7 +2,7 @@
 
 A vim plugin to improve the project search experience when using tools like [ag](https://github.com/ggreer/the_silver_searcher) and [rg](https://github.com/BurntSushi/ripgrep).
 
-# Rationale
+## Rationale
 
 I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to quickly `:Ag` search multiple words without quotes, narrow down multiple results in realtime with [extended search syntax](https://github.com/junegunn/fzf#search-syntax), then populate quickfix for a large refactor 👌
 
@@ -20,7 +20,7 @@ Furthermore, switching between both tools was frustrating because Ack.vim always
 
 Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass options, and do it all from one command! ❤️
 
-# Installation
+## Installation
 
 Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
 
@@ -28,7 +28,7 @@ Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
 Plug 'jesseleite/vim-agriculture'
 ```
 
-# Usage
+## Usage
 
 If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` commands.
 
@@ -42,7 +42,7 @@ Likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
 
 If you are using another search wrapper, you'll need to wrap your input with `agriculture#smart_quote_input()`.
 
-# Mappings
+## Mappings
 
 If you are using one of the provided commands, you can also hook into the provided `<Plug>` mappings in your `.vimrc`:
 
@@ -54,7 +54,7 @@ nmap <Leader>* <Plug>AgRawWordUnderCursor
 
 Again likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
 
-# How It Works
+## How It Works
 
 Your input will be automatically quoted _unless_ the following conditions are met:
    - Quotes in your query, signifying you might want to handle your own quoting/escaping, ie.
@@ -75,7 +75,7 @@ Your input will be automatically quoted _unless_ the following conditions are me
 
 TL;DR: If you use quotes, dashes, or need to pass a path, it's recommended you quote/escape your own pattern and vim-agriculture will stay out of your way 👍
 
-# Who am I?
+## Who am I?
 
 Just a hack 🔨
 
