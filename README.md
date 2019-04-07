@@ -10,15 +10,17 @@ I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to qu
 :Ag function index
 ```
 
-But I found myself missing the ability to pass options to like I could with [Ack.vim](https://github.com/mileszs/ack.vim)'s `:Ack` 😢
+But I found myself missing the ability to pass command line options like I could with [Ack.vim](https://github.com/mileszs/ack.vim)'s `:Ack` 😢
 
 ```
 :Ack -Q -i 'function index' vendor
 ```
 
-Furthermore, switching between both tools was frustrating because Ack.vim always required quotes for multi word searches, but Fzf.vim treated quotes as a literal part of the search query.
+Furthermore, Fzf.vim's `:Ag` treats quotes as a literal part of the search query, which is inconsistent with `ag` on the command line.
 
-Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass options, and do it all from one command! ❤️
+Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass command line options, and do it all from one command.
+
+[Read more about my project searching workflow with fzf.vim and agriculture](https://jesseleite.com/posts/4/project-search-your-feelings) ❤️
 
 ## Installation
 
