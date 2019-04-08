@@ -12,11 +12,22 @@ function! agriculture#trim_and_escape_register_a()
   call setreg('a', escapedQuery)
 endfunction
 
+function! agriculture#fzf_ag_raw(command_suffix, ...)
+  if !executable('ag')
+    return s:warn('ag is not found')
+  endif
+  let userOptions = get(g:, 'agriculture#ag_options', '')
+  let command = 'ag --nogroup --column --color ' . trim(userOptions . ' ' . a:command_suffix)
+  return call('fzf#vim#grep', extend([command, 1], a:000))
+endfunction
+
 function! agriculture#fzf_rg_raw(command_suffix, ...)
   if !executable('rg')
     return s:warn('rg is not found')
   endif
-  return call('fzf#vim#grep', extend(['rg --column --line-number --no-heading --color=always '.a:command_suffix, 1], a:000))
+  let userOptions = get(g:, 'agriculture#rg_options', '')
+  let command = 'rg --column --line-number --no-heading --color=always ' . trim(userOptions . ' ' . a:command_suffix)
+  return call('fzf#vim#grep', extend([command, 1], a:000))
 endfunction
 
 function! s:warn(message)
