@@ -46,7 +46,7 @@ If you are using another search wrapper, you'll need to wrap your input with `ag
 
 ## Mappings
 
-If you are using one of the provided commands, you can also hook into the provided `<Plug>` mappings in your `.vimrc`:
+If you are using one of the provided commands, you can hook into the provided `<Plug>` mappings in your `.vimrc`:
 
 ```
 nmap <Leader>/ <Plug>AgRawSearch
@@ -54,7 +54,17 @@ vmap <Leader>/ <Plug>AgRawVisualSelection
 nmap <Leader>* <Plug>AgRawWordUnderCursor
 ```
 
-Again likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
+Likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
+
+## Customization
+
+If you are using one of the provided commands, you can also set default command line options in your `.vimrc`:
+
+```
+let g:agriculture#ag_options = '--case-sensitive'
+```
+
+Again likewise for `:RgRaw` with `g:agriculture#rg_options`.
 
 ## How It Works
 
