@@ -2,6 +2,13 @@
 
 A vim plugin to improve the project search experience when using tools like [ag](https://github.com/ggreer/the_silver_searcher) and [rg](https://github.com/BurntSushi/ripgrep).
 
+- [Rationale](#rationale)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Mappings](#mappings)
+- [Customization](#customization)
+- [How It Works](#how-it-works)
+
 ## Rationale
 
 I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to quickly `:Ag` search multiple words without quotes, narrow down multiple results in realtime with [extended search syntax](https://github.com/junegunn/fzf#search-syntax), then populate quickfix for a large refactor 👌
