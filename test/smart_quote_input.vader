@@ -1,4 +1,7 @@
-Execute (Auto quotes without options or path):
+Before (Enable smart quoting):
+  let g:agriculture#disable_smart_quoting = 0
+
+Execute (Smart quotes without detected options or path):
   AssertEqual '-- "func.* index"', agriculture#smart_quote_input('func.* index')
   AssertEqual '-- "func.*\ index"', agriculture#smart_quote_input('func.*\ index')
   AssertEqual '-- "->middleware"', agriculture#smart_quote_input('->middleware')
