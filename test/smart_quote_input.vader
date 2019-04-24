@@ -17,3 +17,8 @@ Execute (Hands off with options):
 Execute (Hands off with space escaped query and path):
   AssertEqual 'func.*\ index vendor/package', agriculture#smart_quote_input('func.*\ index vendor/package')
 
+Before (Disable smart quoting):
+  let g:agriculture#disable_smart_quoting = 1
+
+Execute (Hands off if explicitly disabled):
+  AssertEqual 'func.* index', agriculture#smart_quote_input('func.* index')
