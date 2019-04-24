@@ -1,4 +1,7 @@
 function! agriculture#smart_quote_input(input)
+  if get(g:, 'agriculture#disable_smart_quoting', 0) > 0
+    return a:input
+  endif
   let hasQuotes = match(a:input, '"') > -1 || match(a:input, "'") > -1
   let hasOptions = match(' ' . a:input, '\s-[-a-zA-Z]') > -1
   let hasEscapedSpacesPlusPath = match(a:input, '\\ .*\ ') > 0
