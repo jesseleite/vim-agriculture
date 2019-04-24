@@ -65,6 +65,8 @@ Likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
 
 ## Customization
 
+### Command Line Options
+
 If you are using one of the provided commands, you can also set default command line options in your `.vimrc`:
 
 ```
@@ -72,6 +74,14 @@ let g:agriculture#ag_options = '--case-sensitive'
 ```
 
 Again likewise for `:RgRaw` with `g:agriculture#rg_options`.
+
+### Disable Smart Quoting
+
+If you are using one of the provided commands, and want to disable smart quoting for CLI consistency:
+
+```
+let g:agriculture#disable_smart_quoting = 1
+```
 
 ## How It Works
 
