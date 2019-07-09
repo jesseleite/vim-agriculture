@@ -10,7 +10,7 @@ endfunction
 
 function! agriculture#trim_and_escape_register_a()
   let query = getreg('a')
-  let trimmedQuery = trim(query)
+  let trimmedQuery = s:trim(query)
   let escapedQuery = escape(trimmedQuery, "'#%\\")
   call setreg('a', escapedQuery)
 endfunction
@@ -20,7 +20,7 @@ function! agriculture#fzf_ag_raw(command_suffix, ...)
     return s:warn('ag is not found')
   endif
   let userOptions = get(g:, 'agriculture#ag_options', '')
-  let command = 'ag --nogroup --column --color ' . trim(userOptions . ' ' . a:command_suffix)
+  let command = 'ag --nogroup --column --color ' . s:trim(userOptions . ' ' . a:command_suffix)
   return call('fzf#vim#grep', extend([command, 1], a:000))
 endfunction
 
@@ -29,8 +29,16 @@ function! agriculture#fzf_rg_raw(command_suffix, ...)
     return s:warn('rg is not found')
   endif
   let userOptions = get(g:, 'agriculture#rg_options', '')
-  let command = 'rg --column --line-number --no-heading --color=always ' . trim(userOptions . ' ' . a:command_suffix)
+  let command = 'rg --column --line-number --no-heading --color=always ' . s:trim(userOptions . ' ' . a:command_suffix)
   return call('fzf#vim#grep', extend([command, 1], a:000))
+endfunction
+
+function! s:trim(str)
+  if exists('*trim')
+    return trim(a:str)
+  endif
+
+  return matchstr(a:str, '^\s*\zs.\{-}\ze\s*$')
 endfunction
 
 function! s:warn(message)
