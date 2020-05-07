@@ -11,19 +11,19 @@ A vim plugin to improve the project search experience when using tools like [ag]
 
 ## Rationale
 
-I was inspired by [Fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to quickly `:Ag` search multiple words without quotes, narrow down multiple results in realtime with [extended search syntax](https://github.com/junegunn/fzf#search-syntax), then populate quickfix for a large refactor 👌
+I was inspired by [fzf.vim](https://github.com/junegunn/fzf.vim)'s ability to quickly `:Ag` search multiple words without quotes, narrow down multiple results in realtime with [extended search syntax](https://github.com/junegunn/fzf#search-syntax), then populate quickfix for a large refactor 👌
 
 ```
 :Ag function index
 ```
 
-But I found myself missing the ability to pass command line options like I could with [Ack.vim](https://github.com/mileszs/ack.vim)'s `:Ack` 😢
+But I found myself missing the ability to pass command line options like I could with [ack.vim](https://github.com/mileszs/ack.vim)'s `:Ack` 😢
 
 ```
 :Ack -Q -i 'function index' vendor
 ```
 
-Furthermore, Fzf.vim's `:Ag` treats quotes as a literal part of the search query, which is inconsistent with `ag` on the command line.
+Furthermore, fzf.vim's `:Ag` treats quotes as a literal part of the search query, which is inconsistent with `ag` on the command line.
 
 Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass command line options, and do it all from one command.
 
@@ -39,7 +39,7 @@ Plug 'jesseleite/vim-agriculture'
 
 ## Usage
 
-If you are already using [Fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` commands.
+If you are already using [fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` commands.
 
 ```
 :AgRaw func.*index
@@ -82,6 +82,10 @@ If you are using one of the provided commands, and want to disable smart quoting
 ```
 let g:agriculture#disable_smart_quoting = 1
 ```
+
+### Preview Window
+
+Preview windows are now rendered by default in many [fzf.vim](https://github.com/junegunn/fzf.vim) commands.  If you wish to customize or disable this behaviour, [see fzf.vim's documentation](https://github.com/junegunn/fzf.vim#preview-window) on preview windows.
 
 ## How It Works
 

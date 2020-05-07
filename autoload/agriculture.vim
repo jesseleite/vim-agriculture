@@ -21,7 +21,8 @@ function! agriculture#fzf_ag_raw(command_suffix, ...)
   endif
   let userOptions = get(g:, 'agriculture#ag_options', '')
   let command = 'ag --nogroup --column --color ' . s:trim(userOptions . ' ' . a:command_suffix)
-  return call('fzf#vim#grep', extend([command, 1], a:000))
+  let bang = a:000[0]
+  return call('fzf#vim#grep', extend([command, 1], [s:preview(bang), bang]))
 endfunction
 
 function! agriculture#fzf_rg_raw(command_suffix, ...)
@@ -30,15 +31,24 @@ function! agriculture#fzf_rg_raw(command_suffix, ...)
   endif
   let userOptions = get(g:, 'agriculture#rg_options', '')
   let command = 'rg --column --line-number --no-heading --color=always ' . s:trim(userOptions . ' ' . a:command_suffix)
-  return call('fzf#vim#grep', extend([command, 1], a:000))
+  let bang = a:000[0]
+  return call('fzf#vim#grep', extend([command, 1], [s:preview(bang), bang]))
+endfunction
+
+function! s:preview(bang, ...)
+  let preview_window = get(g:, 'fzf_preview_window', a:bang && &columns >= 80 || &columns >= 120 ? 'right': '')
+  if len(preview_window)
+    return call('fzf#vim#with_preview', add(copy(a:000), preview_window))
+  endif
+  return {}
 endfunction
 
 function! s:trim(str)
   if exists('*trim')
     return trim(a:str)
+  else
+    return matchstr(a:str, '^\s*\zs.\{-}\ze\s*$')
   endif
-
-  return matchstr(a:str, '^\s*\zs.\{-}\ze\s*$')
 endfunction
 
 function! s:warn(message)
