@@ -42,7 +42,7 @@ function! s:preview(bang, ...)
   endif
   " For backward-compatiblity
   if type(preview_window) == type('')
-    let preview_args = [preview_window]
+    let preview_window = [preview_window]
   endif
   return call('fzf#vim#with_preview', extend(copy(a:000), preview_window))
 endfunction
