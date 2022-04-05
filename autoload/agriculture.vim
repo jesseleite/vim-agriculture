@@ -37,10 +37,14 @@ endfunction
 
 function! s:preview(bang, ...)
   let preview_window = get(g:, 'fzf_preview_window', a:bang && &columns >= 80 || &columns >= 120 ? 'right': '')
-  if len(preview_window)
-    return call('fzf#vim#with_preview', add(copy(a:000), preview_window))
+  if empty(preview_window)
+    return {}
   endif
-  return {}
+  " For backward-compatiblity
+  if type(preview_window) == type('')
+    let preview_args = [preview_window]
+  endif
+  return call('fzf#vim#with_preview', extend(copy(a:000), preview_window))
 endfunction
 
 function! s:trim(str)
