@@ -11,7 +11,7 @@ endfunction
 function! agriculture#trim_and_escape_register_a()
   let query = getreg('a')
   let trimmedQuery = s:trim(query)
-  let escapedQuery = escape(trimmedQuery, "'#%\\")
+  let escapedQuery = shellescape(trimmedQuery)
   call setreg('a', escapedQuery)
 endfunction
 
