@@ -33,15 +33,15 @@ Thus, the intention of this plugin is to bring the best of both worlds to your f
 
 Install using [vim-plug](https://github.com/junegunn/vim-plug) or similar:
 
-```
+```vim
 Plug 'jesseleite/vim-agriculture'
 ```
 
 ## Usage
 
-If you are already using [fzf.vim](https://github.com/junegunn/fzf.vim), you can use the provided `:AgRaw` / `:RgRaw` commands.
+If you are already using [fzf.vim](https://github.com/junegunn/fzf.vim) or [fzf-lua](https://github.com/ibhagwan/fzf-lua) you can use the provided `:AgRaw` / `:RgRaw` commands.
 
-```
+```vim
 :AgRaw func.*index
 :AgRaw 'func.*index'
 :AgRaw -Q 'function index()' app/Http/Controllers
@@ -55,7 +55,7 @@ If you are using another search wrapper, you'll need to wrap your input with `ag
 
 If you are using one of the provided commands, you can hook into the provided `<Plug>` mappings in your `.vimrc`:
 
-```
+```vim
 nmap <Leader>/ <Plug>AgRawSearch
 vmap <Leader>/ <Plug>AgRawVisualSelection
 nmap <Leader>* <Plug>AgRawWordUnderCursor
@@ -69,7 +69,7 @@ Likewise for `:RgRaw`, just substitute `AgRaw` in `RgRaw` in the above examples.
 
 If you are using one of the provided commands, you can also set default command line options in your `.vimrc`:
 
-```
+```vim
 let g:agriculture#ag_options = '--case-sensitive'
 ```
 
@@ -79,13 +79,34 @@ Again likewise for `:RgRaw` with `g:agriculture#rg_options`.
 
 If you are using one of the provided commands, and want to disable smart quoting for CLI consistency:
 
-```
+```vim
 let g:agriculture#disable_smart_quoting = 1
 ```
 
 ### Preview Window
 
 Preview windows are now rendered by default in many [fzf.vim](https://github.com/junegunn/fzf.vim) commands.  If you wish to customize or disable this behaviour, [see fzf.vim's documentation](https://github.com/junegunn/fzf.vim#preview-window) on preview windows.
+
+[fzf-lua's](https://github.com/ibhagwan/fzf-lua) preview is been used as defined by default / setup for `grep` [see fzf.lua's documentation](https://github.com/ibhagwan/fzf-lua).
+
+### Choosing wrapper
+
+Currently
+
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
+
+are supported and will be automatically chosen but can also be predefined with
+
+```vim
+let g:agriculture#fzf_wrapper = 'fzf.vim'
+```
+
+or
+
+```vim
+let g:agriculture#fzf_wrapper = 'fzf-lua'
+```
 
 ## How It Works
 
