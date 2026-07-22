@@ -27,7 +27,7 @@ Furthermore, fzf.vim's `:Ag` treats quotes as a literal part of the search query
 
 Thus, the intention of this plugin is to bring the best of both worlds to your favourite search wrapper.  Perform multi-word searches with or without quotes, pass command line options, and do it all from one command.
 
-[Read more about my project searching workflow with fzf.vim and agriculture](https://jesseleite.com/posts/4/project-search-your-feelings) ❤️
+[Read more about my project searching workflow with fzf.vim and agriculture](https://web.archive.org/web/20230324223807/https://jesseleite.com/posts/4/project-search-your-feelings) ❤️
 
 ## Installation
 
